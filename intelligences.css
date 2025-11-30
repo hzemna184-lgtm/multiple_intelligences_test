@@ -1,0 +1,241 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #222;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+#cover {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-end ;
+  align-items: flex-end;
+  text-align: right;
+  background-image: url('backg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px;
+  box-sizing: border-box;
+  gap: 25px;
+  /*padding-bottom: 100px; */
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+#final {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url('results.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px;
+  box-sizing: border-box;
+  gap: 25px;
+  
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  color: rgb(255, 115, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+#final.h1,
+#final.p {
+  font-weight: bold;
+}
+
+#quizContent {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+    padding: 50px;
+    box-sizing: border-box;
+    background-image: url('bg1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    background-attachment: fixed;
+    
+}
+
+/* Question styling */
+.question {
+    display: none; /* Hide questions by default */
+    text-align: left;
+    align-items: flex-end;
+    margin-left: 0;
+
+}
+
+.question h1 {
+    color: rgb(0, 0, 0);
+    margin-bottom: 30px;
+}
+
+#startButton {
+  padding: 15px 30px;
+  font-size: 20px;
+  background-color: rgba(159, 206, 209, 0.685);
+  color: rgb(48, 75, 90);
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  align-self: center;
+  margin-right: 0;
+}
+
+#RESULT,
+#to12,
+#to11,
+#to10,
+#to9,
+#to8,
+#to7,
+#to6,
+#to5,
+#to4,
+#to2,
+#to3{
+  display: none;
+  padding: 15px 30px;
+  font-size: 20px;
+  background-color: rgba(159, 206, 209, 0.685);
+  color: rgb(48, 75, 90);
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 100px;
+  transition: all 0.3s ease;
+  align-self: center;
+}
+#RESULT:hover,
+#to12:hover,
+#to11:hover,
+#to10:hover,
+#to9:hover,
+#to8:hover,
+#to7:hover,
+#to6:hover,
+#to5:hover,
+#to4:hover,
+#to2:hover,
+#to3:hover {
+  background-color: rgba(0,0,0,0.8);
+  transform: scale(1.05);
+  border-color: rgba(255,255,255,0.6);
+}
+#startButton:hover {
+  background-color: rgba(0,0,0,0.8);
+  transform: scale(1.05);
+  border-color: rgba(255,255,255,0.6);
+}
+
+@media (max-width: 768px) {
+  #cover {
+    padding: 15px;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 80px;
+  }
+  
+  #cover h1 {
+    font-size: 24px;
+    margin-top: 80px;
+    margin-right: 0;
+  }
+  
+  #cover p {
+    font-size: 16px;
+    max-width: 100%;
+    margin-right: 0;
+  }
+  
+  #startButton {
+    padding: 12px 25px;
+    font-size: 18px;
+  }
+  
+  #cover h1,
+  #cover p,
+  #startButton {
+    margin-right: 0;
+  }
+}
+
+#cover h1,
+#cover p{
+  margin: 0;
+  width: fit-content; 
+  margin-right: 50px;
+}
+
+#cover h1 {
+  margin-top: 0px;
+  color: black;
+}
+
+#cover p {
+  max-width: 400px;
+  color: black;
+  width: auto;
+}
+#final.hidden,
+#cover.hidden,
+#quizContent.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+#final.visibile,
+#quizContent.visible {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#quizContent .buttons {
+    display: flex;
+    flex-direction: column;
+    
+    gap: 15px;
+    margin-top: 30px;
+    width: 100%;
+   
+}
+
+#quizContent .buttons button,
+#quizContent .buttons2 button{
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: rgba(159, 206, 209, 0.685);
+    color: rgb(48, 75, 90);
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: auto;
+    min-width: 200px;
+}
+
+#quizContent .buttons button:hover,
+#quizContent .buttons2 button:hover{
+    background-color: rgba(0,0,0,0.8);
+    transform: scale(1.05);
+    border-color: rgba(255,255,255,0.6);
+    color: white;
+}
